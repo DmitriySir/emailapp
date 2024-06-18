@@ -1,0 +1,25 @@
+.header__wrapper{
+    background-color: rgb(255, 255, 255);
+    color: rgb(30, 32, 34);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.header__title{
+    margin: 0px 0px 0.35em;
+    font-family: Inter, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.header__text{
+    margin: 0px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.57;
+    color: rgb(103, 119, 136);
+}
+
+
