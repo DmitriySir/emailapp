@@ -1,9 +1,10 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../../store/ModalSlice';
 import { Button } from "@mui/material";
 import { Input } from "../../components/Input";
-import "./Main.modules.css";
+import styles from "./Main.module.css";
 import { Footer } from "../Footer/Footer";
 import Divider from '@mui/material/Divider';
 import Modal from "../Modal/Modal";
@@ -17,9 +18,9 @@ export const Main = () => {
     });
 
     const inputArr = [
-        { label: "Enter your first name *", type: "text", style: "textInput",reg: 'name' },
+        { label: "Enter your first name *", type: "text", style: "textInput", reg: 'name' },
         { label: "Enter your email *", type: "email", style: "textInput", reg: 'email' },
-        { label: "Bio", type: "text", style: "textArea", reg: 'bio' , req: false},
+        { label: "Bio", type: "text", style: "textArea", reg: 'bio', req: false },
         { label: "Country *", type: "text", style: "textInput", reg: 'country' },
         { label: "City *", type: "text", style: "textInput", reg: 'city' },
         { label: "Enter your address *", type: "text", style: "textInput", reg: 'address' }
@@ -41,16 +42,16 @@ export const Main = () => {
             console.log(localStorage.getItem('savedData'));
         }
     };
-    
+
 
     return (
-        <div className="wrapper">
-            <form className="wrapper" id='data'>
+        <div className={styles.wrapper}>
+            <form className={styles.wrapper} id='data'>
                 <Input inputArr={inputArr} register={register} />
             </form>
             <Divider />
             <Footer />
-            <Button variant="contained" className="mainButton"  form='data' onClick={handleSubmit(submit)} >Save</Button>
+            <Button variant="contained" className={styles.mainButton} form='data' onClick={handleSubmit(submit)} >Save</Button>
             {showModal && <Modal />}
         </div>
     );

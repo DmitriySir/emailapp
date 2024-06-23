@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import "../pages/Main/Main.modules.css"
+import styles from "../pages/Main/Main.module.css"
 
 export const Input = ({ inputArr, register }) => {
     return (
@@ -7,8 +8,8 @@ export const Input = ({ inputArr, register }) => {
             {inputArr.map((item, index) => {
                 const { type, label, typeStyle, reg } = item;
                 return (
-                    <div key={index} className='input__item'>
-                        <label className="main__label">{label}</label>
+                    <div key={index} className={styles.input__item}>
+                        <label className={styles.main__label}>{label}</label>
                         <input type={type} className={typeStyle} placeholder={label} {...register(reg)} />
                     </div>
                 );

@@ -1,25 +1,14 @@
-.app__wrapper{
-    margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    color: rgb(30, 32, 34);
-    border-radius: 8px;
-    padding: 32px;
-    max-width: 1280px;
-    border: 1px solid #ccc; 
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); 
-}
-
-.wrapper{
+.wrapper {
     display: flex;
 }
 
-.input__item{
+.input__item {
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
-.main__label{
+.main__label {
     margin: 0px 0px 16px;
     font-family: Inter, sans-serif;
     font-size: 0.875rem;
@@ -27,7 +16,7 @@
     font-weight: 700;
 }
 
-.textInput{
+.textInput {
     font: inherit;
     letter-spacing: inherit;
     color: currentcolor;
@@ -45,48 +34,49 @@
 
 }
 
-@media (min-width: 320px){
-    .wrapper{
+@media (min-width: 320px) {
+    .wrapper {
         flex-direction: column;
     }
-    input{
+
+    input {
         padding: 16.5px 14px;
         border-radius: 5px;
-        border-color:  grey;
+        border-color: grey;
     }
 
-    form :nth-child(3) >:nth-child(2){
+    form :nth-child(3)>:nth-child(2) {
         padding-bottom: 50px;
     }
-    
+
 }
 
-@media (min-width: 640px){
+@media (min-width: 640px) {
 
-    .wrapper{
+    .wrapper {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    .input__item{
+    .input__item {
         flex-direction: column;
         width: 40%;
     }
 
-    input{
+    input {
         width: 100%;
     }
 
-    form :nth-child(3){
+    form :nth-child(3) {
         width: 100%;
     }
 
-    form :nth-child(3) >:nth-child(2){
+    form :nth-child(3)>:nth-child(2) {
         padding-bottom: 50px;
     }
 
-    form :nth-child(6){
+    form :nth-child(6) {
         width: 100%;
     }
 
