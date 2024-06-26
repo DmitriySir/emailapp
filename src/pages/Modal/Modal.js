@@ -17,23 +17,28 @@ const Modal = () => {
         return formattedTime;
     };
 
-   const sendEmail = () => {
-    const currentTime = getCurrentTime(); 
-    const templateParams = {
-        to_email: email, 
-        from_name: localStorage.getItem('name'),
-        message: `${localStorage.getItem('savedData')} - Отправлено ${currentTime}`
-    };
-    dispatch(closeModal());
-    
-    emailjs.send('service_i3km1zp', 'template_ju9uhq2', templateParams, 'PlCvYPx-o2v7rAah7')
-        .then((response) => {
-            console.log('Email successfully sent!', response.status, response.text);
-        }, (error) => {
-            console.error('Failed to send email:', error);
-        });
-};
+    const sendEmail = () => {
+        const currentTime = getCurrentTime();
+        const templateParams = {
+            to_email: email,
+            from_name: localStorage.getItem('name'),
+            message: `${localStorage.getItem('savedData')} - Отправлено ${currentTime}`
+        };
+        dispatch(closeModal());
 
+        emailjs.send('service_i3km1zp', 'template_ju9uhq2', templateParams, 'PlCvYPx-o2v7rAah7')
+            .then((response) => {
+                console.log('Email successfully sent!', response.status, response.text);
+            }, (error) => {
+                console.error('Failed to send email:', error);
+            });
+    };
+
+
+    const isEmailValid = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
 
     return (
         <div>
@@ -46,7 +51,13 @@ const Modal = () => {
                         <input
                             type="text"
                             value={email}
-                            onChange={(e) => dispatch(setEmail(e.target.value))}
+                            onChange={(e) => {
+                                if (isEmailValid(e.target.value)) {
+                                    dispatch(setEmail(e.target.value));
+                                } else {
+                                    alert('Введите корректный email-адрес.');
+                                }
+                            }}
                             placeholder="Email"
                             className='modal__input'
                         />
