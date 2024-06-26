@@ -1,8 +1,8 @@
-import React from "react";
-import { Main } from "./pages/Main/Main";
-import { Header } from "./pages/Header/Header";
+import React from 'react';
+import { Main } from './pages/Main/Main';
+import { Header } from './components/Header/Header';
 import 'normalize.css';
-import styles from "./App.module.css"
+import styles from './App.module.css';
 
 function App() {
   return (

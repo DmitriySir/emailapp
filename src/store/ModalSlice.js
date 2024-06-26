@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   showModal: false,
@@ -9,10 +9,10 @@ const modalSlice = createSlice({
   name: 'modal',
   initialState,
   reducers: {
-    openModal: (state) => {
+    openModal: state => {
       state.showModal = true;
     },
-    closeModal: (state) => {
+    closeModal: state => {
       state.showModal = false;
     },
     setEmail: (state, action) => {
